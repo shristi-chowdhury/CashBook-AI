@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CashBook AI - Signup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff0080",
+                        "background-light": "#f8f5f7",
+                        "background-dark": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+        }
+        .neon-glow:focus-within {
+            box-shadow: 0 0 15px rgba(255, 0, 128, 0.4);
+            border-color: #ff0080 !important;
+        }
+        .btn-neon-glow {
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .password-segment {
+            height: 4px;
+            flex: 1;
+            border-radius: 2px;
+            background: #2d2d2d;
+        }
+        .password-segment.active {
+            background: #ff0080;
+            box-shadow: 0 0 8px rgba(255, 0, 128, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white font-display overflow-x-hidden">
+<div class="min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto w-full">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold tracking-tight">CashBook AI</h2>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-gray-400 hover:text-white text-sm font-medium transition-colors" href="#">Product</a>
+<a class="text-gray-400 hover:text-white text-sm font-medium transition-colors" href="#">Pricing</a>
+<a class="text-gray-400 hover:text-white text-sm font-medium transition-colors" href="#">Company</a>
+</nav>
+<button class="text-white text-sm font-bold hover:text-primary transition-colors">
+                    Log In
+                </button>
+</div>
+</header>
+<!-- Main Content Section -->
+<main class="flex-1 flex items-center justify-center px-4 py-12">
+<div class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<!-- Left Side: Signup Form -->
+<div class="flex flex-col max-w-md mx-auto lg:mx-0 w-full">
+<div class="mb-10 text-left">
+<h1 class="text-white text-4xl font-bold leading-tight mb-4 tracking-tight">
+                            Powering the <span class="text-primary">future</span> of cash flow.
+                        </h1>
+<p class="text-gray-400 text-lg">Create your account to start forecasting with AI intelligence.</p>
+</div>
+<form class="space-y-6">
+<!-- Full Name Field -->
+<div class="flex flex-col gap-2">
+<label class="text-white text-sm font-medium">Full Name</label>
+<div class="neon-glow rounded-lg border border-white/10 bg-[#111111] transition-all overflow-hidden">
+<input class="w-full bg-transparent border-none focus:ring-0 text-white p-4 placeholder:text-gray-600" placeholder="Enter your name" type="text"/>
+</div>
+</div>
+<!-- Email Field -->
+<div class="flex flex-col gap-2">
+<label class="text-white text-sm font-medium">Work Email</label>
+<div class="neon-glow rounded-lg border border-white/10 bg-[#111111] transition-all overflow-hidden">
+<input class="w-full bg-transparent border-none focus:ring-0 text-white p-4 placeholder:text-gray-600" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-2">
+<label class="text-white text-sm font-medium">Secure Password</label>
+<div class="neon-glow rounded-lg border border-white/10 bg-[#111111] transition-all overflow-hidden flex items-center pr-4">
+<input class="w-full bg-transparent border-none focus:ring-0 text-white p-4 placeholder:text-gray-600" placeholder="Enter password" type="password"/>
+<span class="material-symbols-outlined text-gray-500 cursor-pointer hover:text-primary">visibility</span>
+</div>
+<!-- Password Strength Meter -->
+<div class="flex gap-2 mt-2">
+<div class="password-segment active"></div>
+<div class="password-segment active"></div>
+<div class="password-segment active"></div>
+<div class="password-segment"></div>
+</div>
+<p class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Strength: Better</p>
+</div>
+<!-- Social Buttons -->
+<div class="grid grid-cols-2 gap-4 pt-2">
+<button class="flex items-center justify-center gap-2 border border-white/10 rounded-lg py-3 px-4 hover:border-primary/50 transition-all bg-white/5" type="button">
+<img alt="" class="w-4 h-4" color\"_logo.svg"="" data-alt="Google colorful logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7XSR0ZC4fPZbxtqLJNArJwRADr_R1uFbTJ4tRYK7WK4yTgSR2C62owB2l46lc4t9ZWscTPTHPgDHC-dVHsYf6LoPrGqI-eF6_YUcHu_Hz-gBMy8aUhUNUKREKCMj-6IzSVFSbxZAbMNlKJO1d7LJWjip91EzNhiT38DzjoVF823dn_226FBxIAFKWu6HTdOa56SrzGe0uxJxAks9xktZT7EO7PDtUr7jP1V5V4WwOFyWs1XVrBNUZKVjYczsmjJ-4mHENmymlZ01o"/>
+<span class="text-xs font-semibold">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 border border-white/10 rounded-lg py-3 px-4 hover:border-primary/50 transition-all bg-white/5" type="button">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span class="text-xs font-semibold">GitHub</span>
+</button>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary btn-neon-glow hover:bg-primary/90 text-white font-bold py-4 rounded-lg transition-all transform active:scale-[0.98] mt-4" type="submit">
+                            Create Account
+                        </button>
+<p class="text-center text-gray-500 text-sm">
+                            Already have an account? 
+                            <a class="text-primary hover:underline ml-1" href="#">Log in</a>
+</p>
+</form>
+</div>
+<!-- Right Side: Feature Highlighting & Glassmorphism -->
+<div class="hidden lg:flex flex-col items-center justify-center">
+<div class="glass-card p-10 rounded-xl w-full max-w-lg relative overflow-hidden">
+<!-- Decorative Abstract Shapes -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/20 rounded-full blur-[80px]"></div>
+<div class="absolute -bottom-24 -left-24 w-48 h-48 bg-primary/10 rounded-full blur-[80px]"></div>
+<div class="relative z-10">
+<div class="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold mb-6 border border-primary/20">
+<span class="material-symbols-outlined text-sm">verified</span>
+                                TRUSTED BY INNOVATORS
+                            </div>
+<h3 class="text-3xl font-bold text-white mb-6 leading-tight">
+                                Join 500+ startups scaling with AI Intelligence.
+                            </h3>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="mt-1 flex-shrink-0 size-10 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div>
+<h4 class="text-white font-semibold">Real-time Forecasting</h4>
+<p class="text-gray-400 text-sm">Predict your burn rate and runway with 99% accuracy using historical data.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="mt-1 flex-shrink-0 size-10 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">receipt_long</span>
+</div>
+<div>
+<h4 class="text-white font-semibold">Invoice Intelligence</h4>
+<p class="text-gray-400 text-sm">Automatic categorization and matching for every transaction in seconds.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-white/10">
+<div class="flex items-center gap-4">
+<div class="flex -space-x-3">
+<img alt="" class="size-10 rounded-full border-2 border-black" data-alt="Female startup founder portrait profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZntm0HBwmMD9lx4cNeLbEmbiGHwKMOgLti2czos1h4S0l6ZOQof7IL7QnNpqogcAJ9wcslaFWqetJE-vTTYhwoWp8Aq0DvJQWT0QqdbGyAZTAM3CqgLwMgJxhUvzbGfCgMabSlguDiWXbHFEwbSPVtxnonTWMxbbKF9S62TfsoVUKmxsCE1YogXcbOmH3qprNmCXmk6I_7h_psutvyD6QpgG5spVMYPwiEYAaAuLymbiqTblKoiSl7uhvA-zF3unsIDC-VJIHvL83"/>
+<img alt="" class="size-10 rounded-full border-2 border-black" data-alt="Male tech entrepreneur profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqX9H6DpwMEnafoacf0FCNhSNBh7GUmNhUayXat97xIljYY9qZBc1YfE4LZzNN9xD5ZTohAZ6askqS2N8ylzhTBX6FiPrxrfuFFn5CZ8AceuCeBttPaNJFHORXWaSUyrVkcE9KUo-wJP_bw8TiHpQ7FNDKF4pniN112VsJpopGi6_jUg8K0cm_rLYutR0FDNU85q8XMe_f7UMYzq6FYZlOf4v6OPG7vrSELUW_BJ8BR2bWKFIZrPJeuTFZlwplMv4R5HI7O-zv9Jgz"/>
+<img alt="" class="size-10 rounded-full border-2 border-black" data-alt="Professional woman smiling profile photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLfbOTI7Kru8GsUDWnIog6kP1JpiGnEoNJFQ9ir98JzZdgUMPm-UGYq3KiFwEIusnkBE4H2UIU4asBr6xdK5TEmjHq3-D29SHJySVxowrrdWTzDe06h23C5_xFb-_9W4mcSV9fkqbpbcZEFfqT96zSPr75IZoJiKK1_R4QtuE854eInRrkNKWG9Nl3CRIK806eVYHBZPOAjP4udJJ-ThWr60HKWNBH4LXufj5dwOVVCgeIzNK2NxL6IMPbFprRo25XI_VRLYIPeMEt"/>
+</div>
+<p class="text-xs text-gray-400">Join the elite club of data-driven founders.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="py-8 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-gray-600 text-xs">© 2024 CashBook AI. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-gray-600 hover:text-primary text-xs transition-colors" href="#">Privacy Policy</a>
+<a class="text-gray-600 hover:text-primary text-xs transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
