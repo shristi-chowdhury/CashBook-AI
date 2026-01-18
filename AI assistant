@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Assistant - Neon Pink Edition</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "brand-pink": "#FF007F",
+                        "brand-pink-glow": "rgba(255, 0, 127, 0.4)",
+                        "dark-grey": "#121212",
+                        "deep-black": "#000000",
+                        "border-grey": "#262626",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 10px;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+        }
+        .thinking-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #FF007F;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-deep-black font-display text-white/90">
+<div class="flex h-screen overflow-hidden">
+<aside class="w-72 bg-deep-black flex flex-col border-r border-border-grey shrink-0">
+<div class="p-6 flex flex-col h-full">
+<div class="flex items-center gap-3 mb-8">
+<div class="bg-brand-pink/10 p-2 rounded-lg border border-brand-pink/20">
+<span class="material-symbols-outlined text-brand-pink">account_balance</span>
+</div>
+<div>
+<h1 class="text-white text-lg font-bold leading-tight">CashBook AI</h1>
+<p class="text-brand-pink text-[10px] font-bold uppercase tracking-widest">Neon Pink Edition</p>
+</div>
+</div>
+<button class="flex items-center justify-center gap-2 w-full bg-brand-pink hover:opacity-90 text-black font-bold py-3 px-4 rounded-xl transition-all mb-6 neon-glow">
+<span class="material-symbols-outlined">add</span>
+                New Analysis
+            </button>
+<nav class="flex-1 overflow-y-auto space-y-1">
+<p class="text-white/30 text-[10px] font-bold uppercase tracking-widest px-3 mb-2">Recent Reports</p>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-dark-grey text-white cursor-pointer group border border-border-grey">
+<span class="material-symbols-outlined text-brand-pink">chat_bubble</span>
+<p class="text-sm font-medium truncate">Q4 Cash Flow Forecast</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-dark-grey/50 text-white/70 cursor-pointer group transition-colors">
+<span class="material-symbols-outlined group-hover:text-brand-pink">description</span>
+<p class="text-sm font-medium truncate">Unpaid Invoice Summary</p>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-dark-grey/50 text-white/70 cursor-pointer group transition-colors">
+<span class="material-symbols-outlined group-hover:text-brand-pink">trending_up</span>
+<p class="text-sm font-medium truncate">Tax Liability Estimate</p>
+</div>
+</nav>
+<div class="mt-auto pt-6 border-t border-border-grey space-y-2">
+<div class="flex items-center gap-3 px-3 py-2 text-white/60 hover:text-white cursor-pointer transition-colors">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium">Settings</p>
+</div>
+<div class="flex items-center gap-4 p-3 bg-dark-grey rounded-xl border border-border-grey">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-brand-pink/50" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBIPN_lW5YGOkZF_7-AitETCXcysGCf64RtSCslfUwrW_jyBgRV23DR3-RKKqBJKGAJfGy7J6Nc2h_AIS1VW1GmAewBpkcgYLal-QcwroZIW0QXgPpsvDbFlyfGYgWTevUKkvEFhNpoHNpthB0Jq_xkHqwXkiJ-2NDunCagTedz04w6lZW_lHVod-nuLw64DrciVTrXQxuY7596zVpi2QFXAiafBDtXcH0LpOck7fmiUhsqX2qRULwGGGQE9bE0YfmrPYJrz2x1ywo6");'></div>
+<div class="flex flex-col">
+<p class="text-white text-sm font-semibold">Alex Rivera</p>
+<p class="text-brand-pink/70 text-[10px] font-bold uppercase">CFO Advisor</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col relative bg-deep-black">
+<header class="h-16 flex items-center justify-between px-8 border-b border-border-grey bg-deep-black/50 backdrop-blur-md sticky top-0 z-10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-white/40 cursor-pointer hover:text-brand-pink transition-colors">menu_open</span>
+<h2 class="text-base font-semibold text-white">Q4 Cash Flow Forecast</h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-2 bg-dark-grey px-3 py-1.5 rounded-lg border border-border-grey">
+<span class="material-symbols-outlined text-brand-pink text-sm">security</span>
+<span class="text-[11px] font-bold text-white/40 uppercase tracking-tighter">Bank-Grade Encryption</span>
+</div>
+<button class="p-2 text-white/60 hover:text-brand-pink hover:bg-dark-grey rounded-lg transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto px-4 md:px-20 py-8 space-y-8">
+<div class="flex flex-col items-end gap-2 max-w-2xl ml-auto">
+<div class="bg-brand-pink text-black px-6 py-4 rounded-3xl rounded-tr-none shadow-lg neon-glow">
+<p class="text-sm md:text-base font-bold leading-relaxed">
+                        Analyze my current accounts receivable. What's the projected cash flow gap for next month and how can I bridge it?
+                    </p>
+</div>
+<span class="text-[11px] text-white/40 font-medium px-2">10:42 AM</span>
+</div>
+<div class="flex flex-col gap-4 max-w-3xl">
+<div class="flex items-start gap-4">
+<div class="size-10 rounded-xl bg-dark-grey flex items-center justify-center shrink-0 border border-brand-pink/30 shadow-lg">
+<span class="material-symbols-outlined text-brand-pink">bolt</span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="bg-dark-grey border border-border-grey px-6 py-5 rounded-2xl rounded-tl-none text-white/90">
+<p class="text-sm md:text-base leading-relaxed mb-4">
+                                Based on your current AR aging and historical payment patterns, I've identified a <span class="text-brand-pink font-bold">15% cash flow gap</span> projected for November ($42,500 deficit).
+                            </p>
+<div class="bg-deep-black border border-border-grey rounded-xl p-4 mb-4">
+<div class="flex justify-between items-center mb-4">
+<h4 class="text-xs font-bold uppercase text-white/40 tracking-wider">Projected vs Actuals</h4>
+<span class="text-brand-pink text-xs font-bold">+2.4% vs last mo.</span>
+</div>
+<div class="h-24 flex items-end gap-1.5">
+<div class="flex-1 bg-brand-pink/10 rounded-t h-[60%]"></div>
+<div class="flex-1 bg-brand-pink/10 rounded-t h-[80%]"></div>
+<div class="flex-1 bg-brand-pink/10 rounded-t h-[55%]"></div>
+<div class="flex-1 bg-brand-pink rounded-t h-[95%] shadow-[0_0_10px_#FF007F33]"></div>
+<div class="flex-1 bg-brand-pink/40 rounded-t h-[30%] border-2 border-dashed border-brand-pink/50"></div>
+<div class="flex-1 bg-border-grey rounded-t h-[40%]"></div>
+</div>
+</div>
+<p class="text-sm leading-relaxed mb-4 text-white/80">
+                                Primary drivers include three high-value invoices (#204, #209, #211) from Tier 1 clients that typically pay Net 45 despite Net 30 terms.
+                            </p>
+<div class="flex flex-wrap gap-2 pt-2 border-t border-border-grey">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-md bg-brand-pink/10 text-brand-pink text-[11px] font-bold border border-brand-pink/20 cursor-pointer hover:bg-brand-pink/20 transition-colors">
+<span class="material-symbols-outlined text-[14px]">link</span>
+                                    Source: Invoice #204
+                                </div>
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-md bg-brand-pink/10 text-brand-pink text-[11px] font-bold border border-brand-pink/20 cursor-pointer hover:bg-brand-pink/20 transition-colors">
+<span class="material-symbols-outlined text-[14px]">file_present</span>
+                                    Bank Statement Q3
+                                </div>
+</div>
+</div>
+<span class="text-[11px] text-white/40 font-medium px-2">Assistant • Just now</span>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="size-10 rounded-xl bg-dark-grey flex items-center justify-center shrink-0 border border-brand-pink/30">
+<span class="material-symbols-outlined text-brand-pink">bolt</span>
+</div>
+<div class="flex items-center gap-2 px-6 py-4 bg-dark-grey border border-border-grey rounded-2xl rounded-tl-none">
+<div class="thinking-dot"></div>
+<div class="thinking-dot opacity-60"></div>
+<div class="thinking-dot opacity-30"></div>
+<span class="text-xs font-bold text-brand-pink uppercase tracking-widest ml-2">Analysing Data</span>
+</div>
+</div>
+</div>
+<div class="px-4 md:px-20 py-2">
+<div class="flex gap-2 overflow-x-auto no-scrollbar pb-2">
+<button class="whitespace-nowrap flex items-center gap-2 px-4 py-2 rounded-full border border-brand-pink/40 bg-brand-pink/5 text-brand-pink text-xs font-bold hover:bg-brand-pink hover:text-black hover:shadow-[0_0_15px_#FF007F66] transition-all">
+<span class="material-symbols-outlined text-sm">summarize</span>
+                    Summarize Annual Report
+                </button>
+<button class="whitespace-nowrap flex items-center gap-2 px-4 py-2 rounded-full border border-brand-pink/40 bg-brand-pink/5 text-brand-pink text-xs font-bold hover:bg-brand-pink hover:text-black hover:shadow-[0_0_15px_#FF007F66] transition-all">
+<span class="material-symbols-outlined text-sm">warning</span>
+                    Detect anomalies
+                </button>
+<button class="whitespace-nowrap flex items-center gap-2 px-4 py-2 rounded-full border border-brand-pink/40 bg-brand-pink/5 text-brand-pink text-xs font-bold hover:bg-brand-pink hover:text-black hover:shadow-[0_0_15px_#FF007F66] transition-all">
+<span class="material-symbols-outlined text-sm">account_balance_wallet</span>
+                    Is my runway safe?
+                </button>
+<button class="whitespace-nowrap flex items-center gap-2 px-4 py-2 rounded-full border border-brand-pink/40 bg-brand-pink/5 text-brand-pink text-xs font-bold hover:bg-brand-pink hover:text-black hover:shadow-[0_0_15px_#FF007F66] transition-all">
+<span class="material-symbols-outlined text-sm">group</span>
+                    Show top 5 debtors
+                </button>
+</div>
+</div>
+<footer class="p-4 md:px-20 md:pb-8 pt-2">
+<div class="relative group">
+<div class="absolute inset-0 bg-brand-pink/5 blur-xl opacity-0 group-focus-within:opacity-100 transition-opacity"></div>
+<div class="relative flex items-center bg-dark-grey border border-border-grey rounded-2xl p-2 shadow-2xl focus-within:border-brand-pink transition-all">
+<button class="p-3 text-white/40 hover:text-brand-pink transition-colors">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-sm md:text-base py-3 px-2 text-white placeholder:text-white/20" placeholder="Ask about cash flow, tax liabilities, or invoice audits..." type="text"/>
+<div class="flex items-center gap-2 px-2">
+<button class="p-3 text-white/40 hover:text-brand-pink transition-colors">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<button class="bg-brand-pink text-black p-3 rounded-xl shadow-lg shadow-brand-pink/20 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined font-bold">send</span>
+</button>
+</div>
+</div>
+</div>
+<p class="text-center text-[10px] text-white/30 mt-4 uppercase tracking-[0.2em] font-bold">
+                CashBookAI can make mistakes. Verify critical financial data.
+            </p>
+</footer>
+</main>
+</div>
+
+</body></html>
