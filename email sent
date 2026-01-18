@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Email Sent - CashBook AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff0080",
+                        "background-light": "#f8f5f7",
+                        "background-dark": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'neon': '0 0 15px rgba(255, 0, 128, 0.4), 0 0 30px rgba(255, 0, 128, 0.2)',
+                        'neon-strong': '0 0 20px rgba(255, 0, 128, 0.6), 0 0 40px rgba(255, 0, 128, 0.3)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        @keyframes pulse-neon {
+            0%, 100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 10px #ff0080); }
+            50% { opacity: 0.8; transform: scale(1.05); filter: drop-shadow(0 0 25px #ff0080); }
+        }
+        .animate-pulse-neon {
+            animation: pulse-neon 3s ease-in-out infinite;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        body {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body class="font-display text-white selection:bg-primary/30">
+<div class="relative flex min-h-screen w-full flex-col overflow-hidden bg-background-dark">
+<!-- Subtle Ambient Background Glows -->
+<div class="absolute -top-[20%] -left-[10%] h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px]"></div>
+<div class="absolute -bottom-[20%] -right-[10%] h-[500px] w-[500px] rounded-full bg-primary/5 blur-[100px]"></div>
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Nav Bar Component -->
+<div class="px-4 md:px-20 lg:px-40 flex flex-none justify-center py-5 relative z-10">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-white/10 px-6 py-3">
+<div class="flex items-center gap-3">
+<div class="size-8 text-primary">
+<svg class="drop-shadow-[0_0_8px_rgba(255,0,128,0.8)]" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-tight">CashBook AI</h2>
+</div>
+</header>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="flex flex-1 items-center justify-center px-4 py-12 relative z-10">
+<div class="layout-content-container flex flex-col max-w-[480px] w-full flex-1">
+<!-- Card Component (Glassmorphism Styled) -->
+<div class="p-1 @container">
+<div class="flex flex-col items-center justify-center glass-card rounded-xl p-8 md:p-12 shadow-2xl">
+<!-- Animated Mail/Pulse Icon -->
+<div class="mb-8 flex h-24 w-24 items-center justify-center rounded-full bg-primary/10 border border-primary/20 animate-pulse-neon">
+<span class="material-symbols-outlined text-primary !text-5xl" style="font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;">
+                                    send
+                                </span>
+</div>
+<div class="flex w-full flex-col items-center justify-center text-center gap-4">
+<h1 class="text-white text-3xl font-bold leading-tight tracking-[-0.015em]">Check your email</h1>
+<div class="flex flex-col items-center gap-6">
+<p class="text-zinc-400 text-lg font-normal leading-relaxed max-w-[320px]">
+                                        We've sent a password reset link to <span class="text-white font-medium">user@example.com</span>.
+                                    </p>
+<div class="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+<div class="flex flex-col items-center gap-4 w-full">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 border-2 border-primary bg-transparent text-white text-base font-semibold transition-all hover:bg-primary/10 hover:shadow-neon">
+<span class="truncate">Resend Email</span>
+</button>
+<!-- MetaText Component (Refined) -->
+<a class="group relative py-2" href="#">
+<span class="text-zinc-500 text-sm font-medium leading-normal transition-colors group-hover:text-primary underline underline-offset-4 decoration-zinc-700 group-hover:decoration-primary">
+                                                Back to Login
+                                            </span>
+<div class="absolute inset-0 bg-primary/0 blur-xl transition-all group-hover:bg-primary/20 -z-10"></div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Component -->
+<div class="px-4 md:px-20 lg:px-40 flex flex-none justify-center py-5 relative z-10">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<footer class="flex flex-col gap-4 border-t border-white/10 px-5 py-8 text-center">
+<div class="flex flex-wrap items-center justify-center gap-8 mb-2">
+<a class="text-zinc-500 hover:text-white text-sm font-normal transition-colors" href="#">Privacy Policy</a>
+<a class="text-zinc-500 hover:text-white text-sm font-normal transition-colors" href="#">Terms of Service</a>
+<a class="text-zinc-500 hover:text-white text-sm font-normal transition-colors" href="#">Contact Support</a>
+</div>
+<p class="text-zinc-600 text-xs font-normal tracking-wider uppercase">© 2026 CashBook AI. Intelligent Cash Flow Forecasting.</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>
