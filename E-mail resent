@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reset Password - CashBook AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff0080",
+                        "background-light": "#f8f5f7",
+                        "background-dark": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'neon-pink': '0 0 15px -3px #ff0080, 0 0 6px -2px #ff0080',
+                        'neon-button': '0 0 20px 0px rgba(255, 0, 128, 0.6)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(24, 16, 20, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 0, 128, 0.15);
+        }
+        .neon-input:focus {
+            box-shadow: 0 0 10px rgba(255, 0, 128, 0.3);
+            border-color: #ff0080 !important;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-dark font-display text-white min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="w-full border-b border-white/10 px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="text-primary">
+<svg fill="none" height="32" viewbox="0 0 48 48" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold tracking-tight">CashBook AI</h2>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<span class="text-white/60 text-sm">System Status: <span class="text-green-400">Secure</span></span>
+</div>
+</header>
+<main class="flex-1 flex items-center justify-center px-4 py-12">
+<div class="max-w-[480px] w-full">
+<!-- Central Glassmorphism Card -->
+<div class="glass-card rounded-xl p-8 md:p-10 flex flex-col items-center">
+<!-- Glowing Shield Icon -->
+<div class="mb-6 relative">
+<div class="absolute inset-0 bg-primary/30 blur-2xl rounded-full"></div>
+<div class="relative w-16 h-16 bg-background-dark border-2 border-primary rounded-full flex items-center justify-center text-primary shadow-neon-pink">
+<span class="material-symbols-outlined text-4xl">shield_lock</span>
+</div>
+</div>
+<!-- Headline -->
+<div class="text-center mb-8">
+<h1 class="text-3xl font-bold tracking-tight mb-2">Reset Password</h1>
+<p class="text-white/50 text-sm">Secure your AI-powered financial workspace</p>
+</div>
+<!-- Form Fields -->
+<form class="w-full space-y-6">
+<!-- New Password Field -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-white/80 ml-1">New Password</label>
+<div class="relative group">
+<input class="w-full bg-[#12080c] border border-white/10 rounded-lg h-14 px-4 text-white focus:outline-none neon-input transition-all placeholder:text-white/20" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-white/40 hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<!-- ProgressBar Component (Strength Indicator) -->
+<div class="flex flex-col gap-2 px-1">
+<div class="flex justify-between items-center">
+<p class="text-xs font-medium text-white/60 uppercase tracking-wider">Password Strength</p>
+<p class="text-xs font-bold text-primary">Strong</p>
+</div>
+<div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary shadow-[0_0_8px_#ff0080] transition-all duration-500" style="width: 75%;"></div>
+</div>
+<p class="text-[10px] text-white/30 italic">Tip: Use a mix of symbols and numbers</p>
+</div>
+<!-- Confirm New Password Field -->
+<div class="flex flex-col gap-2">
+<label class="text-sm font-medium text-white/80 ml-1">Confirm New Password</label>
+<div class="relative group">
+<input class="w-full bg-[#12080c] border border-white/10 rounded-lg h-14 px-4 text-white focus:outline-none neon-input transition-all placeholder:text-white/20" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-white/40 hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<!-- Primary Action Button -->
+<div class="pt-4">
+<button class="w-full bg-primary hover:bg-[#ff1a8c] text-black font-bold text-base py-4 rounded-lg shadow-neon-button transition-all transform hover:-translate-y-0.5 active:translate-y-0" type="submit">
+                            UPDATE PASSWORD
+                        </button>
+</div>
+<!-- Footer Link -->
+<div class="text-center pt-2">
+<a class="text-white/40 hover:text-white text-sm transition-colors flex items-center justify-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                            Cancel and return to login
+                        </a>
+</div>
+</form>
+</div>
+<!-- Header Image Style Decoration (Optional context) -->
+<div class="mt-12 @container">
+<div class="w-full h-[120px] rounded-xl overflow-hidden opacity-30 grayscale border border-white/5 relative">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark to-transparent z-10"></div>
+<div class="w-full h-full bg-center bg-cover" data-alt="Abstract cyber mesh with neon grid lines" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBvF9SlcEfqunqIIH24rd13UfUs3MHObUm3MxxHKORJBcgNem8RGIbSTLWR0gLltfZUqw9Yr79GHhYxH1z3899u64CUkFiY1-8ObMYTlgeEB0athLCw1YR0oWwLvIuyjBwyEYO-3D6moy2sTSlJC7SGCf61EOPmRXnBJ8ff0z9onJV2hkfWAajAQ44gBX3XJ2kCuBFf8cwLYkOcdGexjZq_WRJqgLMntSXMUHrWgLVlpYP1c8tzc8bLXQYVay-m-_sIREnm3nZRA9k4");'></div>
+</div>
+</div>
+</div>
+</main>
+<footer class="w-full py-8 px-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-white/30 text-xs">
+<p>© 2026 CashBook AI. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Security Protocol</a>
+</div>
+</footer>
+</body></html>
