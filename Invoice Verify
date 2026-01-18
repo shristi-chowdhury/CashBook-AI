@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Invoice Verification - Neon Pink</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "neon-pink": "#FF007F",
+                        "dark-base": "#0A0A0A",
+                        "dark-surface": "#171717",
+                        "dark-border": "#262626",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pink-glow {
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+        }
+        .pink-glow-sm {
+            box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
+        }
+        .neon-gradient {
+            background: linear-gradient(90deg, #FF007F 0%, #FF5EAD 100%);
+        }
+    </style>
+</head>
+<body class="bg-dark-base text-zinc-100 font-display">
+<div class="flex h-screen flex-col overflow-hidden">
+<header class="flex items-center justify-between border-b border-dark-border bg-dark-base px-6 py-3 shrink-0">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="bg-neon-pink text-white p-1.5 rounded-lg shadow-[0_0_15px_rgba(255,0,127,0.3)]">
+<span class="material-symbols-outlined block text-2xl font-bold">query_stats</span>
+</div>
+<h2 class="text-lg font-bold tracking-tight text-white">CashBook AI</h2>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-zinc-500 hover:text-neon-pink transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-medium text-white border-b-2 border-neon-pink pb-4 mb-[-16px]" href="#">Invoices</a>
+<a class="text-sm font-medium text-zinc-500 hover:text-neon-pink transition-colors" href="#">Forecasting</a>
+<a class="text-sm font-medium text-zinc-500 hover:text-neon-pink transition-colors" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 text-sm">search</span>
+<input class="bg-dark-surface border border-dark-border rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-neon-pink w-64 text-white" placeholder="Search..." type="text"/>
+</div>
+<div class="h-8 w-8 rounded-full bg-dark-surface overflow-hidden ring-1 ring-white/10">
+<img alt="User avatar" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKrT4Pd3WcxEMLOH6k6AMsLTDCxq6Pl-G_eIHDF2avSCm_TyAs-LD5Qlkh4f1A0l9ZI4hbBiBKrQ6RnTmMVVtZ1SBpPrh7LvVxKLcd64qeoTxXUrZpfrzUYzMXJM0Cov0xo7ySODtzE8bnA8uI7jmy5mAVZ7yzh0nRIiDrfgym9RKjDpNYw5qirknEYAXpD4rY7FKGSIYfVGKe5u5YSog_GC9GCToQE_aTmThM9VvCK1dIvjc7PUeuA0waEStH9BuC-3OxF6PdYCf4"/>
+</div>
+</div>
+</header>
+<main class="flex flex-1 overflow-hidden">
+<aside class="w-64 border-r border-dark-border bg-dark-base flex flex-col shrink-0 hidden lg:flex">
+<div class="p-6 flex flex-col gap-8">
+<div class="space-y-1">
+<p class="text-[10px] font-bold text-zinc-600 uppercase tracking-widest px-3 mb-2">Workspace</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-zinc-400 hover:bg-dark-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">upload_file</span>
+<span class="text-sm font-medium">Bulk Upload</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/5 text-white" href="#">
+<span class="material-symbols-outlined text-xl text-neon-pink">verified</span>
+<span class="text-sm font-medium">Verification</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-zinc-400 hover:bg-dark-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">history</span>
+<span class="text-sm font-medium">Audit Log</span>
+</a>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] font-bold text-zinc-600 uppercase tracking-widest px-3 mb-2">Automations</p>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-zinc-400 hover:bg-dark-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">robot_2</span>
+<span class="text-sm font-medium">Extraction Rules</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-zinc-400 hover:bg-dark-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">sync_alt</span>
+<span class="text-sm font-medium">ERP Sync</span>
+</a>
+</div>
+</div>
+<div class="mt-auto p-6 border-t border-dark-border">
+<div class="bg-dark-surface rounded-xl p-4 border border-dark-border">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-semibold text-neon-pink">AI Credits</span>
+<span class="text-[10px] text-zinc-500">84% Used</span>
+</div>
+<div class="w-full bg-dark-base rounded-full h-1.5 mb-3">
+<div class="neon-gradient h-1.5 rounded-full" style="width: 84%"></div>
+</div>
+<button class="w-full text-[11px] font-bold text-zinc-400 border border-dark-border rounded py-1 hover:bg-dark-border transition-colors uppercase tracking-wider">Upgrade Plan</button>
+</div>
+</div>
+</aside>
+<div class="flex-1 flex flex-col min-w-0 bg-dark-base">
+<div class="px-6 py-4 flex flex-wrap items-center justify-between gap-4 border-b border-dark-border bg-dark-base">
+<div class="flex items-center gap-2 text-sm">
+<a class="text-zinc-500 hover:text-white" href="#">Invoices</a>
+<span class="text-zinc-600 material-symbols-outlined text-xs">chevron_right</span>
+<span class="font-semibold text-white">Verification</span>
+<span class="ml-3 px-2 py-0.5 rounded bg-dark-surface border border-dark-border text-[10px] text-zinc-400 font-bold tracking-wider uppercase">INV-2024-082</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-zinc-400 hover:bg-dark-surface rounded-lg transition-colors">
+                        Discard
+                    </button>
+<button class="flex items-center gap-2 px-6 py-2 text-sm font-bold bg-neon-pink text-white rounded-lg hover:brightness-110 transition-all pink-glow">
+<span class="material-symbols-outlined text-lg">check_circle</span>
+                        Approve &amp; Save
+                    </button>
+</div>
+</div>
+<div class="flex-1 flex flex-col md:flex-row overflow-hidden">
+<div class="flex-1 flex flex-col border-r border-dark-border overflow-hidden bg-black">
+<div class="flex items-center justify-between p-4 bg-dark-base/50 border-b border-dark-border">
+<div class="flex items-center gap-4">
+<button class="p-1.5 text-zinc-400 hover:bg-dark-surface rounded"><span class="material-symbols-outlined">zoom_in</span></button>
+<button class="p-1.5 text-zinc-400 hover:bg-dark-surface rounded"><span class="material-symbols-outlined">zoom_out</span></button>
+<div class="h-4 w-px bg-dark-border"></div>
+<button class="p-1.5 text-zinc-400 hover:bg-dark-surface rounded"><span class="material-symbols-outlined">rotate_right</span></button>
+</div>
+<span class="text-xs text-zinc-500 font-medium">Page 1 of 1</span>
+</div>
+<div class="flex-1 overflow-auto p-8 flex justify-center items-start bg-black">
+<div class="relative w-full max-w-2xl bg-white shadow-2xl p-10 min-h-[800px] border border-zinc-200 rounded-sm">
+<div class="flex justify-between items-start mb-12">
+<div class="h-12 w-32 bg-zinc-50 border border-zinc-100 rounded flex items-center justify-center text-zinc-300 italic text-sm">Logo</div>
+<div class="text-right">
+<h1 class="text-2xl font-bold text-black uppercase tracking-tighter">Invoice</h1>
+<p class="text-xs text-zinc-400">#INV-2024-082</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-12 mb-12">
+<div>
+<p class="text-[10px] font-bold text-zinc-400 uppercase mb-2">Billed From</p>
+<div class="text-sm text-zinc-800 font-medium p-1">
+                                        SWS Cloud Services<br/>
+                                        123 Tech Lane, Silicon Valley<br/>
+                                        Bengalore
+                                    </div>
+</div>
+<div>
+<p class="text-[10px] font-bold text-zinc-400 uppercase mb-2">Billed To</p>
+<div class="text-sm text-zinc-800 font-medium rounded p-1 bg-zinc-50 border border-dashed border-zinc-200">
+                                        Infinity Logistics Corp<br/>
+                                        456 Port Road <br/>
+                                        Chennai
+                                    </div>
+</div>
+</div>
+<div class="w-full border-t border-zinc-100 pt-8 mb-8">
+<table class="w-full text-sm">
+<thead>
+<tr class="text-left text-zinc-400 text-[10px] font-bold uppercase">
+<th class="pb-4">Description</th>
+<th class="pb-4 text-center">Qty</th>
+<th class="pb-4 text-right">Unit Price</th>
+<th class="pb-4 text-right">Total</th>
+</tr>
+</thead>
+<tbody class="text-zinc-700">
+<tr class="border-b border-zinc-50">
+<td class="py-4">Enterprise Subscription - Yearly</td>
+<td class="py-4 text-center">1</td>
+<td class="py-4 text-right">$12,000.00</td>
+<td class="py-4 text-right">$12,000.00</td>
+</tr>
+<tr>
+<td class="py-4 text-zinc-600">API Data Access (Overages)</td>
+<td class="py-4 text-center">420</td>
+<td class="py-4 text-right">$1.50</td>
+<td class="py-4 text-right">$630.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex justify-end pt-8">
+<div class="w-48 space-y-3">
+<div class="flex justify-between text-xs text-zinc-400">
+<span>Subtotal</span>
+<span>$12,630.00</span>
+</div>
+<div class="flex justify-between text-xs text-zinc-400">
+<span>Tax (8.5%)</span>
+<span>$1,073.55</span>
+</div>
+<div class="flex justify-between text-base font-bold text-black pt-3 border-t border-zinc-100">
+<span>Total</span>
+<span class="bg-black text-white px-2 py-0.5 rounded">$13,703.55</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="w-full md:w-[400px] flex flex-col bg-white overflow-hidden shrink-0">
+<div class="p-6 overflow-y-auto space-y-6">
+<div class="bg-neon-pink/5 border border-neon-pink/20 rounded-xl p-4 flex items-center gap-4">
+<div class="h-10 w-10 rounded-full bg-neon-pink flex items-center justify-center text-white pink-glow-sm">
+<span class="material-symbols-outlined font-bold">bolt</span>
+</div>
+<div>
+<h4 class="text-sm font-bold text-black">AI Extraction: 98.2%</h4>
+<div class="w-32 bg-zinc-100 h-1 rounded-full mt-1 overflow-hidden">
+<div class="neon-gradient h-full" style="width: 98.2%"></div>
+</div>
+</div>
+</div>
+<div class="space-y-5">
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Invoice Number</label>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-neon-pink text-white text-[10px] font-bold shadow-sm">
+<span class="material-symbols-outlined text-[12px] font-bold">verified</span> 100%
+                                    </span>
+</div>
+<input class="w-full bg-zinc-50 border-zinc-200 rounded-lg py-2.5 text-sm text-black focus:ring-neon-pink focus:border-neon-pink" type="text" value="INV-2024-082"/>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Client / Billed To</label>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-neon-pink text-white text-[10px] font-bold shadow-sm">
+<span class="material-symbols-outlined text-[12px] font-bold">verified</span> 99%
+                                    </span>
+</div>
+<div class="relative">
+<input class="w-full bg-zinc-50 border-zinc-200 rounded-lg py-2.5 text-sm text-black focus:ring-neon-pink focus:border-neon-pink pr-10" type="text" value="Infinity Logistics Corp"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400">corporate_fare</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Currency</label>
+</div>
+<select class="w-full bg-zinc-50 border-zinc-200 rounded-lg py-2.5 text-sm text-black focus:ring-neon-pink">
+<option selected="">USD ($)</option>
+<option>EUR (€)</option>
+<option>Rupee (₹)</option>
+</select>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Total Amount</label>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-neon-pink text-white text-[10px] font-bold shadow-sm">
+<span class="material-symbols-outlined text-[12px] font-bold">verified</span> 100%
+                                        </span>
+</div>
+<input class="w-full bg-zinc-50 border-zinc-200 rounded-lg py-2.5 text-sm font-bold text-black focus:ring-neon-pink" type="text" value="13,703.55"/>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Due Date</label>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-zinc-800 text-white text-[10px] font-bold shadow-sm">
+<span class="material-symbols-outlined text-[12px] font-bold">priority_high</span> 82%
+                                    </span>
+</div>
+<div class="relative">
+<input class="w-full bg-zinc-50 border-zinc-200 rounded-lg py-2.5 text-sm text-black focus:ring-neon-pink focus:border-neon-pink pr-10" type="text" value="April 15, 2024"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400">calendar_today</span>
+</div>
+<p class="text-[10px] text-zinc-400 italic">"Due Date" was inferred from "Net 30" terms.</p>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold text-zinc-400 uppercase tracking-wider">Categorization</label>
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-1 rounded bg-zinc-100 text-[10px] font-bold border border-zinc-200 text-zinc-600">Operations</span>
+<span class="px-2 py-1 rounded bg-zinc-100 text-[10px] font-bold border border-zinc-200 text-zinc-600">SaaS Subscription</span>
+<button class="px-2 py-1 rounded bg-white text-[10px] font-bold border border-dashed border-zinc-300 text-zinc-400 hover:text-black transition-colors">+ Add Tag</button>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-zinc-100">
+<h5 class="text-xs font-bold text-black mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-neon-pink text-sm bg-black rounded p-0.5">insights</span>
+                                Cash Flow Impact
+                            </h5>
+<div class="bg-zinc-50 rounded-xl p-4 border border-zinc-100">
+<div class="flex items-center justify-between mb-3">
+<span class="text-[11px] text-zinc-500">Forecasted Balance Impact</span>
+<span class="text-xs font-bold text-red-600">-$13,703.55</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex -space-x-2">
+<div class="h-6 w-6 rounded-full bg-zinc-200 border border-white overflow-hidden">
+<img alt="Team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRkG_jkZqr0zaX3C6qJP0NQJpXGqbuY_23q3jiJNSy4dCh0_IQO9xcF5SoC75FYi97cntTlf4Lw_suZhYzZloB7Zc0BKAFP68TqC0ZknJewqh-vB6STwXQ0gTVh_U_RyWkq8PMYEAl3FPBWt4lZ7FqWbQKmeu1MxTOs8ASNVnotbQM74B9zC5G0qBgmB_DZgjlGS4R_YnHcz62EUkbHXsxq-VavhqUhOB2qz6l1saTYEV4W9PS8yCrPkY4xbSDV4lhB9VgIgDapCgP"/>
+</div>
+<div class="h-6 w-6 rounded-full bg-zinc-300 border border-white overflow-hidden">
+<img alt="Team member" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm7Ryh7Z9tLLiWJ3_mzZRpHToFljNncAXQ6AGIY8F6UDzx6YV_97Cl-Kxb5-N2evXAqaV77krJOcSxQPUIxZTgqUllt1B8QKFFNZDOJhI7xYPUorSO8sv_6DK8DRcTurbfKj58X39AuPS8jPUHELgy052HI7wT5hDDOtD5m34EIwfAwgVnyosQ7xbKFf6wLQGgpe7l7PI3LS3pfBsoyTTpnGKxxi-jUdk0aZgtcXGXAn49AQ0GE93jSdUk0eR2yLWPOc8J4NW6_as7"/>
+</div>
+</div>
+<span class="text-[10px] text-zinc-400">Approvers notified</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
